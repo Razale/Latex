@@ -1,0 +1,763 @@
+
+%% bare_conf.tex
+%% V1.3
+%% 2007/01/11
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.7 or later) with an IEEE conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/tex-archive/macros/latex/contrib/IEEEtran/
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%
+%% File list of work: IEEEtran.cls, IEEEtran_HOWTO.pdf, bare_adv.tex,
+%%                    bare_conf.tex, bare_jrnl.tex, bare_jrnl_compsoc.tex
+%%*************************************************************************
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. IEEE's font choices can trigger bugs that do  ***
+% *** not appear when using other class files.                            ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+% Note that the a4paper option is mainly intended so that authors in
+% countries using A4 can easily print to A4 and see how their papers will
+% look in print - the typesetting of the document will not typically be
+% affected with changes in paper size (but the bottom and side margins will).
+% Use the testflow package mentioned above to verify correct handling of
+% both paper sizes by the user's LaTeX system.
+%
+% Also note that the "draftcls" or "draftclsnofoot", not "draft", option
+% should be used if it is desired that the figures are to be displayed in
+% draft mode.
+%
+\documentclass[conference, compsoc]{IEEEtran}
+% Add the compsoc option for Computer Society conferences.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/oberdiek/
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 4.0 (2003-05-27) and later if using hyperref.sty. cite.sty does
+% not currently provide for hyperlinked citations.
+% The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/cite/
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at: 
+% http://www.ctan.org/tex-archive/macros/latex/required/graphics/
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found as epslatex.ps or
+% epslatex.pdf at: http://www.ctan.org/tex-archive/info/
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage[cmex10]{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics. If using
+% it, be sure to load this package with the cmex10 option to ensure that
+% only type 1 fonts will utilized at all point sizes. Without this option,
+% it is possible that some math symbols, particularly those within
+% footnotes, will be rendered in bitmap form which will result in a
+% document that can not be IEEE Xplore compliant!
+%
+% Also, note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/amslatex/math/
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/required/tools/
+
+
+%\usepackage{mdwmath}
+%\usepackage{mdwtab}
+% Also highly recommended is Mark Wooding's extremely powerful MDW tools,
+% especially mdwmath.sty and mdwtab.sty which are used to format equations
+% and tables, respectively. The MDWtools set is already installed on most
+% LaTeX systems. The lastest version and documentation is available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/mdwtools/
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+%\usepackage{eqparbox}
+% Also of notable interest is Scott Pakin's eqparbox package for creating
+% (automatically sized) equal width boxes - aka "natural width parboxes".
+% Available at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/eqparbox/
+
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\usepackage[tight,footnotesize]{subfigure}
+% subfigure.sty was written by Steven Douglas Cochran. This package makes it
+% easy to put subfigures in your figures. e.g., "Figure 1a and 1b". For IEEE
+% work, it is a good idea to load it with the tight package option to reduce
+% the amount of white space around the subfigures. subfigure.sty is already
+% installed on most LaTeX systems. The latest version and documentation can
+% be obtained at:
+% http://www.ctan.org/tex-archive/obsolete/macros/latex/contrib/subfigure/
+% subfigure.sty has been superceeded by subfig.sty.
+
+
+
+%\usepackage[caption=false]{caption}
+%\usepackage[font=footnotesize]{subfig}
+% subfig.sty, also written by Steven Douglas Cochran, is the modern
+% replacement for subfigure.sty. However, subfig.sty requires and
+% automatically loads Axel Sommerfeldt's caption.sty which will override
+% IEEEtran.cls handling of captions and this will result in nonIEEE style
+% figure/table captions. To prevent this problem, be sure and preload
+% caption.sty with its "caption=false" package option. This is will preserve
+% IEEEtran.cls handing of captions. Version 1.3 (2005/06/28) and later 
+% (recommended due to many improvements over 1.2) of subfig.sty supports
+% the caption=false option directly:
+%\usepackage[caption=false,font=footnotesize]{subfig}
+%
+% The latest version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/subfig/
+% The latest version and documentation of caption.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/caption/
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure. The latest version and documentation can be found at:
+% http://www.ctan.org/tex-archive/macros/latex/base/
+
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/sttools/
+% Documentation is contained in the stfloats.sty comments as well as in the
+% presfull.pdf file. Do not use the stfloats baselinefloat ability as IEEE
+% does not allow \baselineskip to stretch. Authors submitting work to the
+% IEEE should note that IEEE rarely uses double column equations and
+% that authors should try to avoid such use. Do not be tempted to use the
+% cuted.sty or midfloat.sty packages (also by Sigitas Tolusis) as IEEE does
+% not format its papers in such ways.
+
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/misc/
+% Read the url.sty source comments for usage information. Basically,
+% \url{my_url_here}.
+
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+
+\begin{document}
+%
+% paper title
+% can use linebreaks \\ within to get better formatting as desired
+\title{Perkhidmatan Capaian Terkawal Jarak Jauh Untuk Aplikasi HRMIS}
+
+
+% author names and affiliations
+% use a multiple column layout for up to two different
+% affiliations
+
+\author{\IEEEauthorblockN{Razale Ibrahim}
+\IEEEauthorblockA{Fakulti Teknologi Sains Maklumat\\
+Universiti Kebangsaan Malaysia\\
+Bandar Baru Bangi, Selangor\\
+Email: razale.ibrahim@yahoo.com}
+%\and
+%\IEEEauthorblockN{Authors Name/s per 2nd Affiliation (Author)}
+%\IEEEauthorblockA{line 1 (of Affiliation): dept. name of organization\\
+%line 2: name of organization, acronyms acceptable\\
+%line 3: City, Country\\
+%line 4: Email: name@xyz.com}
+}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+
+\begin{abstract}
+%\boldmath
+Pangkalan Data Aplikasi HRMIS terletak di Pusat Data HRMIS, Parcel C, Pusat Pentadbiran Kerajaan Persekutuan Putrajaya. Semasa ini pengguna HRMIS hanya boleh mencapai ke aplikasi tersebut melalui 4 rangkaian persendirian sahaja iaitu melalui:
+
+a)	Putrajaya Campus Network (PCN)
+
+b)	EG*Net yang telah diintegrasikan dengan PCN
+
+c)	integrasi rangkaian antara EG*Net dengan State*Net
+
+d)	integrasi rangkaian antara EG*Net dengan Intranet Agensi 
+
+Justeru itu, pengguna dari rangkaian persendirian lain yang tidak mempunyai integrasi rangkaian dengan EG*Net atau tidak mempunyai talian EG*Net tidak boleh mencapai aplikasi HRMIS.  Ini merupakan cabaran utama yang dihadapi oleh JPA dalam usaha memperluaskan capaian aplikasi HRMIS dengan selamat terutamanya bagi Pejabat Kerajaan di luar negara.
+
+Perkhidmatan atau teknologi capaian yang digunakan adalah perlu mengambilkira tahap keselamatan dan juga melibatkan kos yang berpatutan sejajar dengan bilangan kakitangan dan pejabat kerajaan di luar negara.
+
+
+\end{abstract}
+% IEEEtran.cls defaults to using nonbold math in the Abstract.
+% This preserves the distinction between vectors and scalars. However,
+% if the conference you are submitting to favors bold math in the abstract,
+% then you can use LaTeX's standard command \boldmath at the very start
+% of the abstract to achieve this. Many IEEE journals/conferences frown on
+% math in the abstract anyway.
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Pengenalan}
+% no \IEEEPARstart
+1.1	Terdapat kira-kira 1 juta warga perkhidmatan awam di Malaysia. Ini termasuk yang berkhidmat dengan Kerajaan Persekutuan, Kerajaan Negeri, Kerajaan Tempatan, Perguruan, Polis dan Tentera. Pegurusan sumber manusia di agensi-agensi ini melibatkan Jabatan Perkhidmatan Awam (JPA) dan pelbagai suruhanjaya perkhidmatan seperti Suruhanjaya Perkhidmatan Awam,  Suruhanjaya Perkhidmatan Negeri dan Suruhanjaya Perkhidmatan Pelajaran.
+
+1.2	Setiap Suruhanjaya bertanggung-jawab terhadap pemilihan dan pengambilan kakitangan awam di dalam skim perkhidmatan masing-masing. JPA pula bertanggung-jawab membangunkan polisi-polisi perancangan, pembangunan  dan pengurusan sumber manusia awam. Sementara pelaksanaan dilakukan oleh agensi-agensi Kerajaan. 
+
+1.3	Dalam melaksanakan pengurusan sumber manusia, setiap Agensi  bergantung kepada Sistem Pengurusan Sumber Manusia berkomputer atau menggunakan kaedah manual. Semua sistem ini beroperasi dan diuruskan secara sendirian tanpa ada sebarang integrasi. Akibatnya maklumat inter dan intra Agensi mahupun antara Suruhanjaya Perkhidmatan tidak dapat disatukan dan dimanfaatkan untuk memperbaiki sistem pengurusan dan operasi pengurusan sumber manusia perkhidmatan awam seluruh negara.
+
+1.4	Untuk mengatasi masalah ini Kerajaan telah membangunkan satu Sistem Pengurusan Sumber Manusia yang boleh digunapakai oleh semua Agensi dan Suruhanjaya Perkhidmatan yang dikenali sebagai Aplikasi HRMIS (Human Resource Management Information System). 
+
+1.5	Aplikasi HRMIS ialah salah satu Aplikasi Perdana EG yang dilaksanakan oleh Kerajaan yang berkonsepkan sistem terbuka dan fleksible. Ia dapat memperbaiki edaran maklumat dalam proses operasi dan pengurusan sumber manusia (HRM) Kerajaan.
+
+1.6	Disamping itu HRMIS juga mempunyai matlamat-matlamat berikut:
+
+•	Mencapai satu saiz perkhidmatan awam yang optimum melalui penggunaan maklumat HRM
+•	mengautomasi proses operasi HRM
+•	Mendapatkan maklumat HRM yang terkini dan tersatu supaya perancangan HRM di antara Agensi lebih efektif
+•	Memperbaiki komunikasi, integrasi melintang dan proses yang lebih kemas (streamlined processes) melalui satu persekitaran sistem kolaborasi antara Agensi supaya hanya ada satu sistem capaian ke atas transaksi HRM; dan ini dapat digunapakai oleh semua Agensi
+•	Memperbaiki kebolehan pengurusan sumber manusia tanpa-kertas antara Agensi seperti pengedaran elektronik manual polisi sumber manusia dan pekeliling
+
+% You must have at least 2 lines in the paragraph with the drop letter
+% (should never be an issue)
+
+\hfill rbi
+ 
+\hfill 9 Ogos 2009
+
+\section{Keperluan}
+\subsection{Keperluan Organisasi}
+
+2.1.1	JPA telah mensasarkan 2 kumpulan yang unik yang perlu menggunakan HRMIS pada tahun hadapan. Dua kumpulan tersebut adalah kakitangan Kerajaan di luar negara dan kakitangan sekolah yang mewakili lebihkurang 30% bilangan kakitangan Kerajaan. Kedua-dua kumpulan ini mempunyai cabaran yang berasingan untuk mencapai HRMIS.
+
+2.1.2	Kakitangan Kerajan di luar negara tidak boleh menggunakan aplikasi HRMIS kerana ketiadaan talian EG*Net.  Begitu juga dengan 300,000 warga guru yang tidak dapat mencapai ke aplikasi HRMIS kerana tiada integrasi rangkaian di antara EG*Net dan School*Net.
+
+2.1.3	Disebabkan masalah ini HRMIS tidak dapat dicapai oleh kakitangan Kerajaan secara meluas. Ini menyebabkan perancangan JPA untuk memastikan aplikasi ini digunakan oleh semua kakitangan Kerajaan tidak dapat dicapai dalam tempoh terdekat.
+
+2.1.4	Bagi kakitangan luar negara, salah satu cara untuk mereka mencapai aplikasi HRMIS ialah dengan menyediakan talian EG*Net Global. Walaupun penyelesaian ini adalah selamat namun ia melibatkan kos yang amat tinggi. Penyelesaian alternatifnya pula ialah capaian melalui rangkaian Internet. Ini dapat mengurangkan kos rangkaian. Bagaimanapun penggunaan rangkaian Internet pula mempunyai risiko keselamatan yang tinggi. 
+
+\subsection{Keperluan Teknikal}
+
+2.2.1	Cadangan penyelesaian perlu memenuhi keperluan teknikal berikut:
+
+(a)	Aplikasi HRMIS dapat dicapai oleh kakitangan Kerajaan yang berkhidmat di luar negara. Ini termasuk 103 kedutaan dan konsular negara, pejabat Kementerian Industri dan Perdagangan Antarabangsa (MITI), dan pejabat-pejabat Kerajaan yang lain yang berada di luar negara.
+
+(b)	Aplikasi HRMIS dapat dicapai oleh kakitangan kerajaan yang berkhidmat di pusat-pusat pendidikan yang dihubungkan melalui SchoolNet.
+
+(c)	Aplikasi HRMIS boleh dicapai oleh kakitangan yang melata. Ini termasuk kakitangan yang sering bergerak (mobile user). Justeru itu, ia perlu memenuhi keperluan pengkomputeran melata (ubiquitos computing).
+
+(d)	Tiada kompromi dengan keselamatan ICT. Ini termasuk hanya kakitangan yang dibenarkan sahaja boleh mencapai apliksai HRMIS dan memastikan komputer yang mencapai aplikasi HRMIS memenuhi polisi keselamatan yang minimum seperti mempunyai perisian anti-virus.
+
+(e)	Kos yang efektif.
+
+\section{Cadangan Penyelesaian}
+
+\subsubsection{Objektif Cadangan Penyelesaian}
+
+3.1.1	Objektif cadangan penyelesaian ialah untuk menyediakan satu perkhidmatan capaian untuk membolehkan kakitangan Kerajaan di luar negara dan kakitangan sekolah mencapai ke aplikasi HRMIS tanpa mengkompromi keselamatan aplikasi HRMIS dengan kos yang berpatutan.
+
+\subsection{Skop Penyelesaian}
+
+3.2.1	Skop penyelesaian adalah seperti berikut:
+
+(a)	menyediakan satu perkhidmatan capaian untuk membolehkan kakitangan Kerajaan di luar negara dan kakitangan sekolah mencapai ke aplikasi HRMIS tanpa mengkompromi keselamatan sistem maklumat dan komunikasi.
+
+(b)	menyediakan perkhidmatan direktori yang diintegrasikan dengan perkhidmatan kawalan capaian yang dicadangkan dan HRMIS (jika diperlukan)
+
+(c)	melatih pegawai HRMIS menggunakan perkhidmatan capaian yang dicadangkan melalui kaedah melatih jurulatih utama (train the trainers). Melalui kaedah ini jurulatih utama HRMIS boleh melatih pengguna-pengguna HRMIS.
+
+(d)	Menyediakan perkhidmatan sokongan termasuk meja bantuan kepada pengguna-pengguna HRMIS, sistem perkhidmatan capaian, perkhidmatan direktori dan sistem integrasi direktori perkhidmatan capaian yang dicadangkan dengan direktori HRMIS (jika ada). 
+
+(e)	Menyambungkan LAN dan WLAN sekolah ke SchoolNet.
+
+\subsection{Alternatif Penyelesaian Teknikal}
+
+3.3.1	Terdapat 4 penyelesaian alternatif untuk memenuhi keperluan MAMPU dan JPA dalam memastikan kakitangan Kerajaan dapat mencapai aplikasi HRMIS.
+
+(a)	Perkhidmatan EG*Net Global
+
+(b)	Perkhidmatan IP-Sec
+
+(c)	Perkhidmatan Kawalan Capaian dengan klien
+
+(d)	Perkhidmatan Kawalan Capaian tanpa klien atau SSL-VPN
+
+3.3.2	Bagi setiap cadangan alternatif, kami membuat analisa dari 6 sudut iaitu:
+ 
+i.	Kos (cost) – perbelanjaan harta modal dan kos pengurusan 
+
+ii.	Pengkomputeran melata (ubiquitous computing) – pengguna boleh mencapai aplikasi HRMIS dengan mudah, tidak kira di mana dia berada
+
+iii.Prestasi capaian (access performance) – adakah capaian ke aplikasi HRMIS pantas atau perlahan.
+
+iv.	Pengurusan – kos dan masa pentadbir dalam menguruskan penyelesaian
+
+v.	Pengalaman pengguna (user experience) – pengguna mudah untuk mencapai aplikasi HRMIS tanpa banyak kerenah atau kekangan.
+
+vi.	Keselamatan (security) – risiko keselamatan apabila penyelesaian dilaksanakan 
+
+3.3.3 Perkhidmatan EG*Net Global
+
+3.3.3.1	Asas perkhidmatan ini ialah sama seperti perkhidmatan IP-VPN EG&Net. Perbezaannya ialah pejabat Kerajaan di luar negara   dihubungkan melalui satu rangkaian IP-VPN antarabangsa dengan last mile litar suwa atau jalur lebar. Pejabat-pejabat Kerajaan di Madinah, London dan Tokyo dihubungkan ke satu rangkaian IP-VPN yang di kenali sebagai EG*Net Global. EG*Net Global pula dihubungkan ke EG*Net melalui gateway GITN di Cyberjaya.
+
+3.3.3.2	Seperti rangkaian EG*Net tempatan, EG*Net Global adalah satu rangkaian IP-VPN persendirian (Intranet), bukan IP-VPN melalui rangkaian awam (Internet). Ia diintegrasikan dengan EG*Net tempatan di gateway Cyberjaya. Memandangkan ia adalah satu rangkaian persendirian, kosnya amat tinggi. Namun begitu, di segi keselamatan, ia memberikan peace of mind  kepada pentadbir yang rangkaiannya adalah selamat daripada penggodam luar dan serangan penjenayah siber.
+ 
+3.3.3.3	Melalui integrasi ini pengguna di Madinah boleh mencapai aplikasi HRMIS seperti ia berada di dalam LANnya sendiri. Disegi prestasi ia lebih baik dari penggunaan Internet kerana dalam konsep rangkaian Intranet, trafik boleh dikawal jalan laluannya (route path). Lebih lagi, ia tidak berkongsi dengan trafik lain.
+
+3.3.3.4	Pengkomputeran melata adalah terhad kerana ia hanya boleh digunakan ketika kakitangan Kerajaan berada di pejabat-pejabat yang disediakan dengan talian EG*Net Global.
+
+3.3.4	Perkhidmatan IP-Sec
+
+3.3.4.1	Terdapat 2 komponen utama dalam membentuk penyelesaian IP-Sec. Pertama, peralatan yang akan membuat terowong perhubungan di antara tempat capaian dengan gateway capaian. Sebagai contoh, dari Pejabat Pesuruhjaya di Madinah ke gateway EG*Net di Cyberjaya. Kebiasaannya peralatan yang digunakan ialah firewall. Kedua, rangkaian kawasan luas (wide area network). 
+
+3.3.4.2	 Salah satu nilai cadangan utama (main value proposition) IP-Sec ialah ia lebih murah daripada penyelesaian rangkaian persendirian seperti EG*Net Global. Kos yang lebih murah hanya boleh dicapai dengan menggunakan rangkaian Internet. Tetapi kelemahan IP-Sec ialah di segi keselamatan dan pengurusan. 
+
+3.3.4.3	Oleh kerana IP-Sec menggunakan Internet, ia boleh digodam, dihidu (snif) dan dipasang telinga (eavesdropping) oleh penjenayah siber (cyber terrorists). Bagi organisasi yang mementingkan keselamatan, IP-Sec bukanlah pilihan utama mereka walaupun ia murah.
+
+3.3.4.4	Konsep asas Internet ialah penggunaan bersama lebar jalur rangkaian (shared bandwidth). Bermakna,  sesuatu paket data perlu mencari route yang paling sesuai untuk ia tiba ke sesuatu destinasi. Sekiranya ia bertembung dengan satu nod Internet yang sibuk dan sesak, ia akan mencari nod Internet lain. Sesuatu paket Internet tidak mementingkan tempoh yang diperlukan untuk tiba ke destinasi. Yang lebih penting baginya ialah ia telah tiba ke destinasi walaupun ia mengambil masa yang lama. Bagaimanapun, sekiranya masa yang diambil terlalu lama, paket tersebut akan hilang dalam perjalanan. Ini menyebabkan laman web yang dimuat turun tidak dapat dipaparkan di skrin komputer.
+
+3.3.4.5	Terdapat 3 cabaran utama pengurusan penyelesaian IP-Sec ini. Pertama, setiap tempat mesti mempunyai firewall dan ini perlu di beli (harta modal), dikonfigurasikan, dipasang dan kemudian diselengarakan. Kos dan masa yang perlu digunakan untuk penyelesaian ini akan menyebabkan pentadbir IP-Sec berkerut dahi.
+
+3.3.4.6	Kedua, Internet itu sendiri tidak boleh diuruskan kerana ia berkonsep terbuka dan bebas. Ini bermakna organisasi tidak boleh menentukan bagaimana paket data bergerak apabila ia berada di dalam rangkaian Internet. Paket tersebut akan menentukan arah perjalanannya sendiri. Justeru itu pentadbir IP-Sec tidak boleh memaksa  paket IP-Sec bergerak dengan efisien. Kesannya, prestasi rangkaian akan menurun.
+
+3.3.5	Perkhidmatan Kawalan Capaian dengan klien (IP-Sec VPN)
+
+3.3.5.1	Teknologi kawalan capaian dengan klien atau juga dikenali sebagai IP-Sec VPN memerlukan komputer dipasang dengan klien. Klien ini akan bertindak sebagai rujukan dan kawalan komunikasi di antara komputer dengan perkakasan kawalan capaian di gateway. Sebagai contoh, perhubungan di antara komputer di London dengan gateway di Cyberjaya. Apabila perhubungan dan pengesahan di kedua-duanya tempat telah wujud, barulah pengguna boleh menggunakan pelayar untuk  mencapai aplikasi HRMIS di Putrajaya.
+ 
+3.3.5.2	Seperti teknologi IP-Sec, klien yang digunakan merupakan cabaran utama penyelesaian ini kerana klien tersebut perlu dibeli, dikonfigurasikan, dipasang dan seterusnya perlu diselenggrakan. Ianya lebih rumit untuk diuruskan kerana klien berada di dalam komputer dan bagi pengguna melata, pentadbir sukar menjejaki di manakah mereka berada supaya pengurusan klien dapat dijalankan dengan baik.
+
+3.3.5.3	Seperti IP-Sec, penyelesaian ini biasanya digunakan melalui rangkaian Internet. Oleh itu, semua masalah yang dibincangkan mengenai IP-Sec juga tepakai dengan penyelesaian ini. 
+ 
+3.3.5.4	Masalah lain yang sering dihadapi oleh penyelesaian ini ialah keperluan konfigurasi antara rangkaian Internet dengan rangkaian persendirian. Ini termasuk Terjemahan Alamat Rangkaian (NAT – Network Address Translation) dan pembukaan port-port keselamatan. Ia akan menjadi lebih kompleks apabila oa melibatkan 2 rangkaian persendirian. Ini kerana trafik permulaan (source) dan trafik destinasi perlu membuat pengesahan (authenticate) supaya perhubungan dapat diwujudkan (established communication). 
+
+3.3.5.5	Sebagai contoh, jika klien berada di dalam rangkaian persendirian, rangkaian persendirian itu perlu membuka port tertentu dan juga memastikan NATing dibuat dengan betul. Apabila tiba di destinasi rangkaian persendirian, rangkaian tersebut perlu membuka port tertentu dan membuat NATing ke rangkaiannya pula.
+
+3.3.6	Perkhidmatan Kawalan Capaian Tanpa Klien atau SSL-VPN
+ 
+3.3.6.1	SSL-VPN adalah satu perkhidmatan kawalan capaian tanpa klien melalui jarak jauh. Secara konsepnya ia adalah sama seperti IP-Sec VPN. Perbezaannya ialah pada klien. Penyelesaian ini tidak memerlukan sebarang klien khas. Sebaliknya ia hanya menggunakan pelayar popular seperti Mozilla, Internet Explorer ataiu Safari. Dengan cara ini ia menyelesaikan masalah utama IP-Sec VPN iaitu memasang, mengkofugurasi dan menyelenggara klien IP-Sec VPN di komputer. Inilah manfaat utama SSL-VPN tanpa mengkompromikan keselamatan capaian.
+ 
+3.3.6.2	Peralatan SSL-VPN dipasang pada gateway Cyberjaya. Pengguna hanya perlu melancarkan pelayar Mozilla (sebagai contoh) untuk berhubung dengan peralatan SSL-VPN. Selepas mendapatkan pengesahan, pelayar tersebut boleh mencapai aplikasi HRMIS. 
+
+3.3.6.3	Dalam keadaan tanpa klien, bebanan pentadbiran untuk menyediakan kemudahan inter-operasi (interoperability) dengan aplikasi yang memerlukan penggunaan klien seperti SAP dapat diselesaikan. Justeru itu, capaian ke aplikasi seperti HRMIS dapat dibuat dengan menggunakan sebarang komputer yang mempunyai talian Internet.
+
+3.3.6.4	Cabaran-cabaran lain seperti yang dibincangkan sebelum ini juga dapat diatasi kerana semua komunikasi menggunakan port-port http dan https. Ini adalah port-port yang dibenarkan oleh semua firewall.
+
+3.3.6.5	Walaupun SSL-VPN dapat menyelesaikan masalah IP-SEC dan IP-Sec VPN, namun penggunaan Internet sebagai rangkaian perhubungan akan tetap mengundang masalah-masalah yang telah dibincangkan sebelum ini.
+
+3.3.6.6	Justeru itu, pilihan terbaik ialah penyelesaian dengan menggunakan SSL-VPN yang melibatkan kos yang efektif dan memenuhi ciri-ciri keselamatan dan pengkomputeran melata.
+
+\section{SSL-VPN}
+
+4.1	SSL-VPN adalah satu perkhidmatan kawalan capaian tanpa klien melalui jarak jauh. Ia membolehkan pengguna, peralatan dan rangkaian dicapai dengan selamat. Penyelesaian ini tidak memerlukan sebarang klien khas. 
+
+4.2	Untuk mencapai ke aplikasi HRMIS, pengguna tidak memerlukan sebarang klien khas.  Sebaliknya ia hanya menggunakan pelayar popular seperti Mozilla, Internet Explorer atau Safari untuk berhubung dengan peralatan SSL-VPN di Gateway GITN, Cyberjaya. Selepas mendapatkan pengesahan, pelayar tersebut akan dibenarkan untuk mencapai aplikasi HRMIS secara automatik mengikut polisi kawalan capaian (access control policy) yang ditentukan.
+
+4.3	Dalam Model OSI, perkhidmatan SSL-VPN ini dicapai melalui Lapisan 3. SSL menyediakan perkhidmatan encryption di Lapisan 6. Semua trafik diencrypt dengan menggunakan port 443 untuk memastikan keterhubungan yang selamat.
+
+4.4	SSL VPN akan mengawal capaian dengan mengumpul maklumat dan mengambil tindakan berikut:
+
+•	Mengesan – mengesan apakah yang beroperasi di peralatan end-point . Ini termasuk pelayar yang digunakan, perisian anti-virus, pangkalan data anti-virus yang telah dikemaskini, sijil digital atau peralatan yang sah sahaja.
+
+•	Pertahanan – mempertahan aplikasi yang dicapai dengan menggunakan kawalan capaian. Kawalan capaian akan mengikut pengenalan pengguna dan integriti peralatan yang digunakan. Melalui kawalan ini pengguna hanya akan dapat mencapai aplikasi yang dibenarkan sahaja. 
+
+•	Perhubungan – menghubungkan pengguna secara selamat dan mudah ke aplikasi yang dibenarkan.
+
+4.5	Salah satu masalah utama dengan penggunaan SSL-VPN ialah perkomputeran melata. Pengkomputeran melata bukan sahaja bermaksud pengguna-pengguna boleh mencapai aplikasi HRMIS di mana-mana, tetapi mereka boleh menggunakan apa saja komputer. Apabila menggunakan sebarang komputer, komputer yang digunakan tidak semestinya selamat. Mungkin komputer tersebut merupakan tapak pelancaran malware. Ini adalah risiko yang terpaksa diambil apabila menggunakan penyelesaian ini.
+
+4.6	SSL-VPN mengurangkan masalah ini dengan menguatkuasakan polisi keselamatan. Ia boleh mengesan komputer yang tidak mempunyai anti-virus dan menghalang komputer tersebut daripada mencapai aplikasi HRMIS. Ini merupakan pertahanan pertama untuk mengurangkan serangan malware atau penggodam ke atas aplikasi HRMIS.
+
+4.7	Masalah lain yang dibawa oleh pengkomputeran melata ialah maklumat transaksi selalunya tertinggal di ingatan cache pelayar.  Seseorang yang mahir boleh mencari fail-fail sementara itu dan mungkin meyalahgunakan maklumat-maklumat tersebut untuk kepentingan diri. 
+
+4.8	Untuk memastikan maklumat-maklumat di ingatan cache pelayar tidak disalahgunakan, teknologi SSL-VPN boleh menghapuskan ingatan cache, sejarah, cookies dan kata laluan apabila pengguna mematikan pelayarnya dan melog keluar. 
+
+
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation Results}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command, the
+% \label for the overall figure must come after \caption.
+% \hfil must be used as a separator to get equal spacing.
+% The subfigure.sty package works much the same way, except \subfigure is
+% used instead of \subfloat.
+%
+%\begin{figure*}[!t]
+%\centerline{\subfloat[Case I]\includegraphics[width=2.5in]{subfigcase1}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{subfigcase2}%
+%\label{fig_second_case}}}
+%\caption{Simulation results}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+
+
+% An example of a floating table. Note that, for IEEE style tables, the 
+% \caption command should come BEFORE the table. Table text will default to
+% \footnotesize as IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that IEEE does not put floats in the very first column - or typically
+% anywhere on the first page for that matter. Also, in-text middle ("here")
+% positioning is not used. Most IEEE journals/conferences use top floats
+% exclusively. Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the \fnbelowfloat
+% command of the stfloats package.
+
+
+
+\section{Kesimpulan}
+
+Perkhidmatan Capaian Terkawal Jarak Jauh untuk apliksi HRMIS dengan menggunakan SSL-VPN diharapkan dapat meningkatkan penggunaan dan pengemaskinian data oleh kakitangan kerajaan di luar negara dan kakitangan perkhidmatan perguruan dengan menggunakan kemudahan internet sedia ada.
+
+
+% conference papers do not normally have an appendix
+
+
+% use section* for acknowledgement
+\section*{Penghargaan}
+
+
+Terima kasih diucapkan kepada Encik Asmadi Md Saleh (Ketua, Perancangan & Perundingan, StrICT) dan Adzril Adnan (Eksekutif, Perancangan & Perundingan, StrICT) dari Syarikat GITN Sdn. Bhd. kerana membekalkan maklumat-maklumat yang diperlukan dalam penulisan ini. 
+
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://www.ctan.org/tex-archive/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+%\begin{thebibliography}{1}
+
+%\bibitem{IEEEhowto:kopka}
+%H.~Kopka and P.~W. Daly, \emph{A Guide to \LaTeX}, 3rd~ed.\hskip 1em plus
+%  0.5em minus 0.4em\relax Harlow, England: Addison-Wesley, 1999.
+
+%\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
